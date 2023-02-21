@@ -9,7 +9,7 @@ export default function ProductTable(props) {
             </tr>
         </thead>
         <tbody>
-            {props.products.map(product => <ProductRow product={product} />)}
+            {props.products.map(product => <ProductRow key={product.id} product={product} />)}
         </tbody>
     </table>
 }
