@@ -3,5 +3,13 @@ export default function SearchBar(props) {
         props.onSearch(event.target.value)
     }
 
-    return <input onChange={searchHandler} />
+    const stockHandler = (event) => {
+        props.onStock(event.target.checked);
+    }
+
+    return <div className="search">
+        <input onChange={searchHandler} />
+        <input type="checkbox" onChange={stockHandler} />
+
+    </div>
 }
