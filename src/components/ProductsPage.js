@@ -10,7 +10,6 @@ export default function ProductsPage() {
     const [products, setProducts] = useState(jsonData)
 
     useEffect(()=>{
-        console.log(justStock);
         if (justStock && search) setProducts(jsonData.filter(product => product.inStock && product.name.toLowerCase().includes(search.toLowerCase())))
         else if (justStock) setProducts(jsonData.filter(product => product.inStock))
         else if (search) setProducts(jsonData.filter(product => product.name.toLowerCase().includes(search.toLowerCase())))
@@ -25,7 +24,7 @@ export default function ProductsPage() {
         setJustStock(state => !state)
     }
 
-    return <div>
+    return <div className="products-page">
         <h1>IronStore</h1>
         <SearchBar onSearch={productSearchHandler} onStock={stockHandler} />
         <ProductTable products={products} />

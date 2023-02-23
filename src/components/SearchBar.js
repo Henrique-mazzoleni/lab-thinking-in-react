@@ -8,8 +8,11 @@ export default function SearchBar(props) {
     }
 
     return <div className="search">
-        <input onChange={searchHandler} />
-        <input type="checkbox" onChange={stockHandler} />
-
+        <h2>Search</h2>
+        <input type="text" onChange={searchHandler} />
+        <label>
+            <input type="checkbox" onChange={stockHandler} />
+            Only show products in stock
+        </label>
     </div>
 }
